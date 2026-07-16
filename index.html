@@ -123,21 +123,22 @@
             align-items: center;
         }
 
-        /* Hero Section with Interactive Customizer */
+        /* ===== HERO SECTION ===== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 140px 8% 80px 8%;
-            gap: 8%;
+            gap: 60px;
         }
 
         .hero-text {
             flex: 1;
-            max-width: 540px;
+            max-width: 50%;
         }
 
-        .tagline {
+        .hero-text .tagline {
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -155,28 +156,332 @@
             letter-spacing: -1px;
         }
 
-        .hero-text h1 span { font-weight: 700; }
+        .hero-text h1 span {
+            font-weight: 700;
+        }
 
         .hero-text p {
             color: var(--text-secondary);
             font-size: 16px;
             margin-bottom: 40px;
+            text-align: justify;
         }
 
-        /* Color Switcher Feature */
-        .color-selector {
-            margin-bottom: 40px;
-        }
-        .color-selector p {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-        }
-        .color-options {
+        .cta-group {
             display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO IMAGE (KANAN) ===== */
+        .hero-image {
+            flex: 1;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* ===== CUP DISPLAY ===== */
+        .cup-display {
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 4/5;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.06);
+            transition: background 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cup-display img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .cup-core {
+            width: 100px;
+            height: 200px;
+            border-radius: 12px 12px 40px 40px;
+            transition: var(--transition);
+            position: absolute;
+            bottom: 60px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .cup-core::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 90%;
+            height: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+
+        /* ===== INFO PRODUK ===== */
+        .cup-info {
+            text-align: center;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .cup-info .cup-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .cup-info .cup-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+/* ===== RESPONSIVE UNTUK HP ===== */
+
+/* Tablet */
+@media (max-width: 968px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 140px 4% 60px 4%;
+        gap: 40px;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-text p {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .cup-display {
+        max-width: 280px;
+    }
+
+    .cup-info {
+        max-width: 280px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+    /* HP */
+    @media (max-width: 600px) {
+        /* Header lebih kecil */
+        header {
+            padding: 12px 4%;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .nav-right {
             gap: 12px;
         }
+
+        nav {
+            gap: 10px;
+        }
+
+        nav a {
+            font-size: 14px;
+            gap: 4px;
+        }
+
+        nav a i {
+            font-size: 13px;
+        }
+
+        .icon-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 4% 40px 4%;
+            gap: 30px;
+        }
+
+        .hero-text h1 {
+            font-size: 30px;
+        }
+
+        .hero-text p {
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .tagline {
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            font-size: 13px;
+        }
+
+        /* Foto hero */
+        .cup-display {
+            max-width: 220px;
+        }
+
+        .cup-info .cup-name {
+            font-size: 20px;
+        }
+
+        .cup-info .cup-price {
+            font-size: 16px;
+        }
+
+        /* Produk */
+        .products {
+            padding: 60px 4% 40px;
+        }
+
+        .section-title h2 {
+            font-size: 26px;
+        }
+
+        .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .product-card {
+            padding: 14px;
+        }
+
+        .product-img-box {
+            border-radius: 10px;
+        }
+
+        .product-meta h4 {
+            font-size: 14px;
+        }
+
+        .product-meta p {
+            font-size: 12px;
+        }
+
+        /* Katalog */
+        .katalog-section {
+            padding: 40px 4% 60px;
+        }
+
+        .katalog-table {
+            font-size: 12px;
+            min-width: 550px;
+        }
+
+        .katalog-table th,
+        .katalog-table td {
+            padding: 10px 12px;
+            font-size: 11px;
+        }
+
+        .katalog-table th:first-child,
+        .katalog-table td:first-child {
+            font-size: 11px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 4% 24px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .footer-brand .brand-name {
+            font-size: 18px;
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+            max-width: 100%;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+        }
+
+        .footer-col ul a {
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            text-align: center;
+            gap: 6px;
+            font-size: 12px;
+        }
+
+        /* Color selector */
+        .color-selector p {
+            font-size: 10px;
+        }
+
+        .color-dot {
+            width: 22px;
+            height: 22px;
+        }
+    }
         .color-dot {
             width: 28px;
             height: 28px;
@@ -204,38 +509,6 @@
         }
         .btn-primary { background: var(--accent); color: var(--bg-color); }
         .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .cup-display {
-            width: 100%;
-            max-width: 420px;
-            aspect-ratio: 4/5;
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.06);
-            transition: background 0.6s ease;
-        }
-        .cup-core {
-            width: 140px;
-            height: 220px;
-            border-radius: 12px 12px 40px 40px;
-            transition: var(--transition);
-            position: relative;
-        }
-        .cup-core::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 5%; width: 90%; height: 15px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 4px;
-        }
 
         /* Showcase Grid */
         .products { padding: 120px 8% 60px; }
@@ -269,19 +542,30 @@
             align-items: center;
             justify-content: center;
         }
-        .product-preview {
-            width: 60px;
-            height: 100px;
-            border-radius: 6px 6px 20px 20px;
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
         }
 
         .product-meta {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
-        .product-meta h4 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
-        .product-meta p { color: var(--text-secondary); font-size: 14px; }
+
+        .product-meta h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .product-meta p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
 
         /* ===== KATALOG TABEL STYLE ===== */
         .katalog-section {
@@ -442,13 +726,6 @@
             .hero-text { max-width: 100%; display: flex; flex-direction: column; align-items: center; }
             .hero-text h1 { font-size: 40px; }
             .color-options { justify-content: center; }
-        
-        .product-img-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 12px;
-            }
         }
     </style>
 </head>
@@ -489,7 +766,11 @@
         <div class="hero-image">
             <div class="cup-display" id="cup-display-bg" style="background: #f0ede9;">
                 <img src="assets/cup1.png" alt="Kala Forest" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
-                <div class="cup-core" id="cup-render" style="background: #2c3e35;"></div>
+            </div>
+            <!-- INFO PRODUK DI BAWAH FOTO -->
+            <div class="cup-info">
+                <h3 class="cup-name" id="cup-name-display">Injection 380ml</h3>
+                <p class="cup-price" id="cup-price-display">Rp 1.215</p>
             </div>
         </div>
     </section>
@@ -506,8 +787,8 @@
                 </div>
                 <div class="product-meta">
                     <div>
-                        <h4>Kala Earth</h4>
-                        <p>Rp 349.000</p>
+                        <h4>Injection 400ml</h4>
+                        <p>Rp 1.240</p>
                     </div>
                 </div>
             </div>
@@ -515,12 +796,12 @@
             <!-- Kala Ocean -->
             <div class="product-card">
                 <div class="product-img-box">
-                    <img src="assets/cup3.png" alt="Kala Ocean" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    <img src="assets/cup3.png" alt="Kala Earth" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                 </div>
                 <div class="product-meta">
                     <div>
-                        <h4>Kala Ocean</h4>
-                        <p>Rp 349.000</p>
+                        <h4>12 Oz PET</h4>
+                        <p>Rp 780</p>
                     </div>
                 </div>
             </div>
@@ -528,12 +809,12 @@
             <!-- Kala Ocean 2 -->
             <div class="product-card">
                 <div class="product-img-box">
-                    <img src="assets/cup4.png" alt="Kala Ocean 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    <img src="assets/cup4.png" alt="Kala Earth" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
                 </div>
                 <div class="product-meta">
                     <div>
-                        <h4>Kala Ocean</h4>
-                        <p>Rp 349.000</p>
+                        <h4>12 Oz</h4>
+                        <p>Rp 440</p>
                     </div>
                 </div>
             </div>
@@ -810,12 +1091,7 @@
             });
         });
 
-        // 3. Tombol "Tambahkan ke Bag" (alert saja)
-        ///document.getElementById('add-custom-cup').addEventListener('click', () => {
-        //    alert(`Anda memilih ${selectedCupName} (Rp 349.000) – fitur keranjang sedang dinonaktifkan.`);
-        //});
-
-        // 4. Smooth Scroll Reveal Animation
+        // 3. Smooth Scroll Reveal Animation
         const revealElements = document.querySelectorAll('.reveal');
         const revealOnScroll = () => {
             revealElements.forEach(el => {

@@ -404,37 +404,230 @@
             background: #2a2a2a;
         }
 
-        /* ===== RESPONSIVE ===== */
+                /* ===== RESPONSIVE ===== */
+        /* ===== RESPONSIVE UNTUK HP ===== */
+
+        /* Tablet */
         @media (max-width: 968px) {
-            .about-wrapper { padding-top: 120px; }
+            .about-wrapper {
+                padding-top: 120px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .about-title {
+                font-size: 34px;
+            }
+
+            .about-card {
+                padding: 24px 20px;
+            }
+
+            .vm-card {
+                padding: 20px 16px;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
         }
 
+        /* HP */
         @media (max-width: 768px) {
-            .vision-mission { grid-template-columns: 1fr; }
-            .about-card { padding: 28px 24px; }
-            .vm-card { padding: 24px 20px; }
-            nav { gap: 16px; }
-            nav a { font-size: 15px; }
-            .about-title { font-size: 34px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .vision-mission {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .about-card {
+                padding: 20px 16px;
+            }
+
+            .vm-card {
+                padding: 20px 16px;
+            }
+
+            .about-title {
+                font-size: 28px;
+            }
+
+            .about-subtitle {
+                font-size: 15px;
+            }
+
+            .about-card p {
+                font-size: 14px;
+            }
+
+            .vm-card p {
+                font-size: 14px;
+            }
+
+            .vm-card ul li {
+                font-size: 14px;
+            }
         }
 
         @media (max-width: 600px) {
-            .about-title { font-size: 28px; }
-            .about-subtitle { font-size: 15px; }
-            .about-card p { font-size: 15px; }
-            .about-logo img { max-width: 120px; }
-            header { padding: 14px 4%; }
-            .logo img { height: 40px; }
-            .nav-right { gap: 14px; }
-            nav { gap: 10px; }
-            nav a { font-size: 12px; }
-            nav a i { font-size: 12px; }
-            .back-btn { padding: 14px 28px; font-size: 14px; }
-            .vm-card ul li { font-size: 14px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-            .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
-            footer { padding: 40px 4% 24px; }
+            /* Header */
+            header {
+                padding: 12px 4%;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .nav-right {
+                gap: 12px;
+            }
+
+            nav {
+                gap: 8px;
+            }
+
+            nav a {
+                font-size: 12px;
+                gap: 4px;
+            }
+
+            nav a i {
+                font-size: 11px;
+            }
+
+            .icon-btn svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            /* About content */
+            .about-wrapper {
+                padding-top: 100px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .about-logo img {
+                max-width: 100px;
+            }
+
+            .about-badge {
+                font-size: 10px;
+                padding: 4px 14px;
+            }
+
+            .about-title {
+                font-size: 26px;
+            }
+
+            .about-subtitle {
+                font-size: 14px;
+            }
+
+            .divider {
+                width: 50px;
+            }
+
+            .about-card {
+                padding: 16px 14px;
+                border-radius: 12px;
+            }
+
+            .about-card p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .vision-mission {
+                gap: 16px;
+            }
+
+            .vm-card {
+                padding: 16px 14px;
+                border-radius: 12px;
+            }
+
+            .vm-card .vm-icon {
+                font-size: 28px;
+            }
+
+            .vm-card h3 {
+                font-size: 18px;
+            }
+
+            .vm-card p {
+                font-size: 14px;
+            }
+
+            .vm-card ul li {
+                font-size: 13px;
+                padding: 4px 0;
+            }
+
+            .vm-card ul li i {
+                font-size: 12px;
+                min-width: 16px;
+            }
+
+            /* Tombol kembali */
+            .back-section {
+                margin-bottom: 24px;
+            }
+
+            .back-btn {
+                padding: 12px 24px;
+                font-size: 13px;
+                gap: 8px;
+            }
+
+            /* Footer */
+            footer {
+                padding: 32px 4% 20px;
+                margin-top: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-brand .brand-name {
+                font-size: 16px;
+            }
+
+            .footer-brand p {
+                font-size: 13px;
+                max-width: 100%;
+            }
+
+            .footer-col h4 {
+                font-size: 13px;
+            }
+
+            .footer-col ul a {
+                font-size: 13px;
+            }
+
+            .footer-col ul a i {
+                width: 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 4px;
+                font-size: 11px;
+                padding-top: 16px;
+            }
         }
     </style>
 </head>
