@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Shawn Printing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #fcfbf9;
+            --surface: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --text-muted: #888888;
+            --accent: #2c3e35; 
+            --accent-light: #f0ede9;
+            --accent-gold: #c9a87c;
+            --border: rgba(0,0,0,0.05);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f1110;
+            --surface: #161917;
+            --text-primary: #f5f5f5;
+            --text-secondary: #a0a6a3;
+            --accent: #cdbfa8;
+            --accent-light: #1b1f1d;
+            --border: rgba(255,255,255,0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(252, 251, 249, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        [data-theme="dark"] header {
+            background: rgba(15, 17, 16, 0.85);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 19px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a:hover { opacity: 0.6; }
+        nav a.active { color: var(--accent); font-weight: 600; }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        .icon-btn:hover {
+            opacity: 0.6;
+        }
+
+        /* ===== ABOUT CONTENT ===== */
+        .about-wrapper {
+            padding-top: 140px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 0;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .about-container {
+            max-width: 900px;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* HEADER SECTION */
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-logo {
+            margin-bottom: 24px;
+        }
+        .about-logo img {
+            max-width: 180px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .about-badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .about-title {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .about-title span {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        .about-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-gold), var(--accent));
+            margin: 20px auto 0;
+            border-radius: 4px;
+        }
+
+        /* BODY CONTENT */
+        .about-body {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .about-card {
+            background: var(--surface);
+            padding: 40px 48px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+        .about-card:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+
+        .about-card p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .about-card p strong {
+            color: var(--text-primary);
+        }
+
+        .about-card .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* VISI MISI GRID */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        .vm-card {
+            background: var(--surface);
+            padding: 32px 32px 36px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            text-align: center;
+        }
+        .vm-card:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.04);
+            transform: translateY(-4px);
+        }
+
+        .vm-card .vm-icon {
+            font-size: 32px;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .vm-card h3 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .vm-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .vm-card ul {
+            list-style: none;
+            text-align: left;
+            padding: 0;
+            margin-top: 8px;
+        }
+
+        .vm-card ul li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding: 6px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.6;
+        }
+
+        .vm-card ul li i {
+            color: var(--accent-gold);
+            font-size: 14px;
+            margin-top: 4px;
+            min-width: 18px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 60px 7% 40px;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .brand-name {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 320px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .footer-col ul a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-col ul a i {
+            width: 24px;
+            display: inline-block;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        /* ===== TOMBOL KEMBALI ===== */
+        .back-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 40px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: #1f2e28;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(44, 62, 53, 0.25);
+        }
+        [data-theme="dark"] .back-btn {
+            background: var(--accent);
+        }
+        [data-theme="dark"] .back-btn:hover {
+            background: #2a2a2a;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 968px) {
+            .about-wrapper { padding-top: 120px; }
+        }
+
+        @media (max-width: 768px) {
+            .vision-mission { grid-template-columns: 1fr; }
+            .about-card { padding: 28px 24px; }
+            .vm-card { padding: 24px 20px; }
+            nav { gap: 16px; }
+            nav a { font-size: 15px; }
+            .about-title { font-size: 34px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+        }
+
+        @media (max-width: 600px) {
+            .about-title { font-size: 28px; }
+            .about-subtitle { font-size: 15px; }
+            .about-card p { font-size: 15px; }
+            .about-logo img { max-width: 120px; }
+            header { padding: 14px 4%; }
+            .logo img { height: 40px; }
+            .nav-right { gap: 14px; }
+            nav { gap: 10px; }
+            nav a { font-size: 12px; }
+            nav a i { font-size: 12px; }
+            .back-btn { padding: 14px 28px; font-size: 14px; }
+            .vm-card ul li { font-size: 14px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+            .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+            footer { padding: 40px 4% 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            <img src="assets/logo-shawn.png" alt="Shawn Printing">
+        </div>
+        <div class="nav-right">
+            <nav>
+                <a href="index.html#koleksi"><i class="fas fa-boxes"></i> Koleksi</a>
+                <a href="index.html#katalog"><i class="fas fa-book-open"></i> Katalog</a>
+            </nav>
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle Theme">
+                <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== KONTEN ABOUT ===== -->
+    <section class="about-wrapper">
+        <div class="about-container">
+
+            <div class="about-header">
+                <div class="about-logo">
+                    <img src="assets/logo-shawn.png" alt="Shawn Printing Logo">
+                </div>
+                <span class="about-badge">✦ Tentang Kami</span>
+                <h1 class="about-title">Shawn <span>Printing</span></h1>
+                <p class="about-subtitle">Percetakan Kemasan Custom untuk Brand Anda</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="about-body">
+                <div class="about-card">
+                    <p>
+                        <strong>Shawn Printing</strong> merupakan perusahaan yang bergerak di bidang 
+                        <span class="highlight">percetakan kemasan custom</span> sejak tahun 2018, 
+                        dengan fokus pada kebutuhan branding UMKM, bisnis kuliner, minuman, hingga perusahaan. 
+                        Shawn Printing menyediakan berbagai produk kemasan berkualitas seperti 
+                        <strong>paper cup</strong>, <strong>cup plastik</strong>, 
+                        <strong>paper bowl</strong>, serta berbagai kebutuhan cetak lainnya yang dapat 
+                        disesuaikan dengan identitas brand pelanggan.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <p>
+                        Didukung oleh <strong>teknologi cetak berkualitas</strong> dan tim yang berpengalaman, 
+                        Shawn Printing berkomitmen menghadirkan hasil cetak yang 
+                        <span class="highlight">presisi, menarik</span>, dan mampu meningkatkan nilai jual produk. 
+                        Setiap pesanan diproduksi dengan memperhatikan kualitas, ketepatan warna, serta 
+                        kepuasan pelanggan.
+                    </p>
+                </div>
+
+                <div class="about-card">
+                    <p>
+                        Shawn Printing melayani pemesanan dari berbagai wilayah di Indonesia dengan 
+                        <strong>proses pemesanan yang mudah</strong>, <span class="highlight">harga kompetitif</span>, 
+                        serta pelayanan yang responsif. Perusahaan terus berinovasi untuk menjadi 
+                        <strong>mitra terpercaya</strong> bagi pelaku usaha dalam membangun branding 
+                        melalui kemasan yang profesional.
+                    </p>
+                </div>
+
+                <div class="vision-mission">
+                    <div class="vm-card">
+                        <span class="vm-icon"><i class="fas fa-eye"></i></span>
+                        <h3>Visi</h3>
+                        <p>Menjadi perusahaan percetakan kemasan custom terpercaya di Indonesia yang mendukung pertumbuhan bisnis melalui solusi kemasan berkualitas.</p>
+                    </div>
+
+                    <div class="vm-card">
+                        <span class="vm-icon"><i class="fas fa-bullseye"></i></span>
+                        <h3>Misi</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Menyediakan produk percetakan dengan kualitas terbaik.</li>
+                            <li><i class="fas fa-check"></i> Memberikan pelayanan yang cepat, ramah, dan profesional.</li>
+                            <li><i class="fas fa-check"></i> Mendukung perkembangan UMKM dan berbagai jenis usaha melalui kemasan yang menarik dan fungsional.</li>
+                            <li><i class="fas fa-check"></i> Terus berinovasi mengikuti tren desain dan teknologi percetakan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-section">
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand-name">CV SHAWN PRINTING</span>
+                <p style="text-align: justify;">Cup minuman artistik untuk mereka yang menghargai keindahan dalam keseharian. Dibuat dengan cinta dan ketelitian.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Media Sosial</h4>
+                <ul>
+                    <li style="font-weight: bold;"><a href="#"><i class="fas fa-store" style="width:20px;"></i> Shawn Printing</a></li>
+                    <li style="font-weight: bold;">
+                        <a href="https://instagram.com/shawn_printing" target="_blank">
+                            <i class="fab fa-instagram" style="width:20px;"></i> shawn_printing
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <ul>
+                    <li style="font-weight: bold;">
+                        <a href="https://wa.me/6282329611488" target="_blank">
+                            <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> +6282329611488
+                        </a>
+                    </li>
+                    <li style="font-weight: bold;">
+                        <a href="https://wa.me/6281225999881" target="_blank">
+                            <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> +6281225999881
+                        </a>
+                    </li>
+                    <li style="font-weight: bold;">
+                        <a href="https://wa.me/6285199193741" target="_blank">
+                            <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> +6285199193741
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li style="font-weight: bold;"><a href="about.html">About Us</a></li>
+                    <li style="font-weight: bold;"><a href="index.html#koleksi">Koleksi</a></li>
+                    <li style="font-weight: bold;"><a href="index.html#katalog">Katalog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span style="font-weight: bold;">&copy; CV SHAWN PRINTING</span>
+            <span><a href="#"></a></span>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Dark & Light Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', targetTheme);
+        });
+    </script>
+
+</body>
+</html>
